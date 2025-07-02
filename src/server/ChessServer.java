@@ -7,7 +7,7 @@ public class ChessServer {
     public static void main(String[] args) {
         try (ServerSocket serverSocket = new ServerSocket(5000)) {
             System.out.println("Chess Server started on port 5000...");
-            DBManager.initializeDatabase(); // Create tables
+            DBManager.createMovesTable(); // Create tables
 
             while (true) {
                 Socket clientSocket = serverSocket.accept();
